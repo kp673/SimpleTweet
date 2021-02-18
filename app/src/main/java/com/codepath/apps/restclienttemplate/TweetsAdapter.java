@@ -44,13 +44,6 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
     public int getItemCount() {
         return tweets.size();
     }
-
-
-
-
-
-
-
     // define Viewholder
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -58,18 +51,21 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
         ImageView ivProfileImage;
         TextView tvbody;
         TextView tvScreenName;
+        TextView tvDate;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             ivProfileImage= itemView.findViewById(R.id.ivProfileImage);
             tvbody= itemView.findViewById(R.id.tvbody);
             tvScreenName= itemView.findViewById(R.id.tvScreenName);
+            tvDate= itemView.findViewById(R.id.tvDate);
         }
 
         public void bind(Tweet tweet) {
             tvbody.setText(tweet.body);
             tvScreenName.setText(tweet.user.screenName);
             GlideApp.with(context).load(tweet.user.profileImageURL).into(ivProfileImage);
+            tvDate.setText(tweet.formattedTime);
         }
     }
 }
