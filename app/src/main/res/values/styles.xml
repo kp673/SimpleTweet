@@ -47,5 +47,12 @@
     <style name="MyActionBarTabText" parent="@style/Widget.AppCompat.ActionBar.TabText">
         <item name="android:textColor">@color/black</item>
     </style>
-
+    <style name="counterText" parent="@style/Widget.AppCompat.ActionBar.TabText">
+        <item name="android:textColor">@color/light_gray</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+    <style name="counterError" parent="@style/Widget.AppCompat.ActionBar.TabText">
+        <item name="android:textColor">@color/medium_red</item>
+        <item name="android:textSize">15sp</item>
+    </style>
 </resources>

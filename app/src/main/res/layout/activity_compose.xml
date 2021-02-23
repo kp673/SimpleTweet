@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".composeActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/username_text_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColorHint="@color/twitter_blue"
+        app:counterEnabled="true"
+        app:counterMaxLength="280"
+        app:counterOverflowTextAppearance="@style/counterError"
+        app:counterTextAppearance="@style/TextAppearance.AppCompat.Body1">
+
+        <EditText
+            android:id="@+id/etCompose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp"
+            android:autoLink="all"
+            android:backgroundTint="@color/twitter_blue"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/compose_your_tweet"
+            android:inputType="textAutoCorrect|textMultiLine|text|textCapSentences|textAutoComplete"
+            android:minLines="5"
+            android:textColorHint="@color/medium_gray" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnTweet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username_text_input_layout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:background="@color/twitter_blue_fill_pressed"
+        android:text="@string/tweet" />
+</RelativeLayout>
