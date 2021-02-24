@@ -3,7 +3,9 @@ package com.codepath.apps.restclienttemplate;
 import androidx.activity.ComponentActivity;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +18,7 @@ import com.codepath.apps.restclienttemplate.models.Tweet;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 
 import org.json.JSONException;
+import org.parceler.Parcels;
 
 import okhttp3.Headers;
 
@@ -58,6 +61,13 @@ public class composeActivity extends AppCompatActivity {
                       try {
                           Tweet tweet= Tweet.fromJson(json.jsonObject);
                           Log.i(TAG, "Published: "+tweet.body);
+
+                          Intent i = new Intent();
+                          i.putExtra("tweet", Parcels.wrap(tweet));
+                          setResult(RESULT_OK, i);
+
+                          finish();
+
                       } catch (JSONException e) {
                           Log.e(TAG,"fail to publish",e);
                       }
