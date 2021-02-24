@@ -27,6 +27,7 @@ import okhttp3.Headers;
 public class TimelineActivity extends AppCompatActivity {
 
     public static final String TAG= "TimelineActivity";
+    public static final int REQUEST_CODE= 22;
 
     RecyclerView rvTweets;
     TwitterClient client;
@@ -94,7 +95,7 @@ public class TimelineActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.compose) {
             Log.i(TAG,"click");
             Intent intent = new Intent(this, composeActivity.class);
-            startActivity(intent);
+            startActivityForResult(intent, REQUEST_CODE);
             return true;
         }
         return super.onOptionsItemSelected(item);
